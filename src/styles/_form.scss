@@ -1,0 +1,160 @@
+.form {
+	position: relative;
+
+	&:not(:last-child) {
+		margin-bottom: 1.5rem;
+	}
+
+	&__group {
+
+		&-title {
+			@extend .grey-uppercase;
+			margin-bottom: 1rem;
+
+			&_small {
+				@extend .grey-uppercase;
+				font-size: $fz-N;
+				margin-bottom: .5rem;
+			}
+		}
+	}
+
+	&__error {
+		color: $clr-Pink;
+	}
+	
+/* RADIO && CHECKBOX
+	=================================================== */
+	.checkable {
+		display: block;
+		position: relative;
+		padding-left: 2.2rem;
+		margin-bottom: 1.1rem;
+		line-height: 1.5;
+		font-weight: 500;
+		cursor: pointer;
+		font-size: $fz-N;
+		user-select: none;
+
+		/* Hide the browser's default radio button */
+		& input {
+			position: absolute;
+			opacity: 0;
+			cursor: pointer;
+		}
+	}
+
+	.checkmark {
+		position: absolute;
+		top: 0; left: 0;
+		height: 1.5rem; width: 1.5rem;
+		border: 1px solid $clr-GreyPale;
+
+		/* Create the indicator (the dot/circle - hidden when not checked) */
+		&:after {
+			content: "";
+			position: absolute;
+			display: none;
+		}
+	}
+
+	&__radio, &__checkbox {
+		@extend .checkable;
+	}
+
+	/* Create a custom radio/checkbox button */
+	&__radio-checkmark,
+	&__checkbox-checkmark {
+		@extend .checkmark;
+	}
+
+	&__radio-checkmark {
+		border-radius: 50%;
+	}
+
+	&__checkbox-checkmark {
+		border-radius: $border-radius;
+	}
+ 
+	/* On mouse-over, add a grey background color */
+	&__radio:hover input ~ &__radio-checkmark,
+	&__checkbox:hover input ~ &__checkbox-checkmark {
+		background-color: #ccc;
+	}
+ 
+	/* When the button is checked, add a blue background */
+	&__radio input:checked ~ &__radio-checkmark,
+	&__checkbox input:checked ~ &__checkbox-checkmark {
+		border-width: 0;
+		background-color: $clr-SkyBlue;
+	}
+ 
+	/* Show the indicator when checked */
+	&__radio input:checked ~ &__radio-checkmark:after,
+	&__checkbox input:checked ~ &__checkbox-checkmark:after {
+		display: block;
+	}
+ 
+	/* Style the indicator (dot/circle) */
+	&__radio &__radio-checkmark:after {
+		top: 0; bottom: 0;
+		left: 0; right: 0;
+		border-radius: 50%;
+		border: 5px solid $clr-SkyBlue;
+		background-color: $clr-White;
+	}
+
+	/* Style the indicator (...) */
+	&__checkbox &__checkbox-checkmark:after {
+		left: .5rem; top: .2rem;
+		width: 0.5625rem;	height: .875rem;
+		border: solid $clr-White;
+		border-width: 0 3px 3px 0;
+		transform: rotate(45deg);
+	}
+
+/* INPUTS
+	================================================== */
+	.input-base {
+		font: 500 $fz-N $ff-Roboto;
+		color: $clr-Black;
+		border: 1px solid $clr-GreyPale;
+		border-radius: $border-radius;
+		padding: .7rem .5rem;
+		min-width: 250px;
+		transition: border-color .1s;
+
+		&:focus {
+			outline: none;
+			border-color: $clr-SkyBlue;
+		}
+	}
+
+	&__input-text {
+		@extend .input-base;
+		width: 100%;
+	}
+
+	&__select {
+		@extend .input-base;
+		position: relative;
+		cursor: pointer;
+
+		&[multiple] {
+			overflow: auto;
+			height: 85px;
+		}
+
+		& option {
+			font: inherit;
+		}
+	}
+	
+	&__textarea {
+		@extend .input-base;
+		resize: none;
+		width: 100%;
+		min-height: 150px;
+	}
+
+}

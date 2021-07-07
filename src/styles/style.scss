@@ -1,0 +1,295 @@
+@import "resets/resets";
+@import "variables";
+@import "fonts";
+
+html {
+	font-size: 1rem;
+}
+
+body {
+	font-family: $ff-Roboto;
+	font-size: $fz-root;
+	color: $clr-BlackAsphalt;
+	background-color: $clr-GreyLight;
+	line-height: $line-height;
+}
+
+h1 {
+	margin: 1rem 0;
+	font-size: $fz-XXXL;
+	font-weight: 500;
+}
+
+h2 {
+	margin: .8rem 0;
+	font-size: $fz-XXL;
+	font-weight: 500;
+}
+
+h3 {
+	margin: .7rem 0;
+	font-size: $fz-XL;
+	font-weight: 500;
+}
+
+h4 {
+	margin: .5rem 0;
+	font-size: $fz-L;
+	font-weight: 500;
+}
+
+p {
+	font-size: $fz-N;
+}
+
+.grey-uppercase {
+	color: $clr-GreyDull;
+	text-transform: uppercase;
+}
+
+main {
+
+	&.main_side {
+		margin-left: 300px;
+		padding-left: 1.5rem;
+	}
+}
+
+.container {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 1rem;
+
+	&_flex {
+		@extend .container;
+		display: flex;
+
+		&-col {
+			@extend .container_flex;
+			flex-direction: column;
+		}
+	}
+}
+
+.btn {
+	position: relative;
+	font-size: $fz-N;
+	padding: 1rem;
+	border: 1px solid inherit;
+	border-radius: $border-radius;
+	overflow: hidden;
+	transition: all .3s;
+
+	&_prime {
+		@extend .btn;
+		color: $clr-White;
+		background-color: $clr-SkyBlue;
+		
+		&:hover {
+			background-color: $clr-SkyBlue-dark;
+		}
+	}
+	&_minor {
+		@extend .btn;
+		font-weight: 500;
+		color: $clr-GreyDull;
+		border-color: $clr-GreyPale;
+		background-color: $clr-White;
+
+		&:hover {
+			background-color: $clr-GreyLight-dark;
+		}
+	}
+	&_accent {
+		@extend .btn;
+		color: $clr-White;
+		background-color: $clr-Pink;
+
+		&:hover {
+			background-color: $clr-Pink-dark;
+		}
+	}
+}
+
+.sect {
+	padding: 1.2rem;
+	background-color: $clr-White;
+	border: 1px solid $clr-GreyPale;
+
+	&:not(:last-child) {
+		margin-bottom: 1.5rem;
+	}
+}
+
+.preloader {
+	position: relative;
+	margin: 2rem auto;
+	width: 50px;
+	height: 50px;
+	border: 5px solid $clr-GreyPale;
+	border-top: 5px solid $clr-SkyBlue;
+	border-radius: 50%;
+	animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg)	
+	}
+	to {
+		transform: rotate(360deg)
+	}
+}
+
+/* Home
+	================================================== */
+.filters {
+	position: fixed;
+	width: 300px;
+
+	&__block {
+		@extend .sect;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+	}
+}
+
+.task-list {
+	margin: 1.5rem 0;
+}
+
+.task-item {
+	@extend .sect;
+	width: 100%;
+	cursor: pointer;
+
+	&__title {
+		color: inherit;
+		transition: color .1s;
+	}
+
+	&:hover &__title {
+		color: $clr-SkyBlue;
+	}
+}
+
+@media (max-width: $media-break-md) {
+
+	main {
+
+		&.main_side {
+			margin-left: 0;
+			padding-left: 0;
+
+			& nav {
+				position: absolute;
+				top: 1rem;
+			}
+		}
+	}
+
+	.filters {
+		position: static;
+		width: 100%;
+		margin: 4.7rem 0 1.5rem;
+
+		&__block {
+			flex-direction: row;
+
+			& .form {
+				flex: 50%;
+			}
+		}
+	}
+}
+
+@media (max-width: $media-break-sm) {
+	html {
+		font-size: $fz-root-sm;
+	}
+}
+
+/* Task View
+	================================================== */
+.nav-top {
+	display: flex;
+	justify-content: space-between;
+
+	&__item:not(:last-child) {
+		margin-right: 1rem;
+	}
+}
+
+.task-view {
+	@extend .sect;
+	margin-top: 1.5rem;
+
+	&__block:not(:last-of-type) {
+		margin-bottom: 2.5rem;
+	}
+
+	&__block-title {
+		@extend .grey-uppercase;
+		font-size: $fz-N;
+	}
+
+	&__block-body {
+		font-size: $fz-L;
+		font-weight: 500;
+	}
+
+	&__footer {
+		margin-top: 1.5rem;
+	}
+}
+
+@media (max-width: $media-break-sm) {
+	.nav-top {
+		flex-direction: column;
+
+		&__group:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+
+		&__item {
+			width: 100%;
+			margin-right: 0;
+
+			&:not(:last-child) {
+				margin-bottom: 1rem;
+			}
+		}
+	}
+
+	.task-view select {
+		width: 100%;
+	}
+}
+
+/* 404 page
+	================================================== */
+.not-found {
+	@extend .sect;
+	margin: 0 auto;
+	max-width: 500px;
+	min-height: 400px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+
+	&__title {
+		font-size: 5rem;
+		text-align: center;
+	}
+
+	&__sub-title {
+		text-align: center;
+	}
+}
+
+/* After-imports
+	================================================== */
+@import 'form';

@@ -1,0 +1,26 @@
+$urlRobotoRegular: 'Assets/fonts/roboto/Roboto-Regular';
+$urlRobotoMedium: 'Assets/fonts/roboto/Roboto-Medium';
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('#{$urlRobotoRegular}.eot');
+	src: local('☺'),
+		url('#{$urlRobotoRegular}.woff2') format('woff2'),
+		url('#{$urlRobotoRegular}.woff') format('woff'),
+		url('#{$urlRobotoRegular}.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('#{$urlRobotoMedium}.eot');
+	src: local('☺'),
+		url('#{$urlRobotoMedium}.woff2') format('woff2'),
+		url('#{$urlRobotoMedium}.woff') format('woff'),
+		url('#{$urlRobotoMedium}.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}

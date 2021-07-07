@@ -1,0 +1,41 @@
+/* Colors
+	================================================== */
+	$clr-Black: #0f0f10;
+	$clr-BlackAsphalt: #525050;
+	$clr-White: #ffffff;
+	$clr-Pink: #f04d4c;
+	$clr-GreyPale: #cad1d1;
+	$clr-GreyDull: #777777;
+	$clr-GreySilver: #949ca0;
+	$clr-GreyLight: #f9fbfb;
+	$clr-SkyBlue: #0091dc;
+
+	$clr-GreyLight-dark: darken($clr-GreyLight, 5%);
+	$clr-SkyBlue-dark: darken($clr-SkyBlue, 10%);
+	$clr-Pink-dark: darken($clr-Pink, 15%);
+
+/* Fonts
+	================================================== */
+	$ff-Roboto: Roboto, Arial, Helvetica, sans-serif;
+
+	$fz-root: 16px;
+
+	$fz-XS: 0.75rem;	//12px
+	$fz-S: 0.875rem;	//14px
+	$fz-N: 1rem;		//16px
+	$fz-L: 1.125rem;	//18px
+	$fz-XL: 1.5rem;	//24px
+	$fz-XXL: 2.125rem;//34px
+	$fz-XXXL: 2.5rem; //40px
+
+/* Other
+	================================================== */
+	$border-radius: 5px;
+	$line-height: 1.39;
+
+/* Adaptive
+	================================================== */
+	$fz-root-sm: .8rem;
+
+	$media-break-md: 768px;
+	$media-break-sm: 425px;
