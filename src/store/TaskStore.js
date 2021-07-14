@@ -12,7 +12,7 @@ export default class TaskStore {
 
 	pushSomeTasks(num) {
 		const result = []
-		let from = this._tasks.length + 1
+		const from = this._tasks.length + 1
 		const to = num + from
 		for (let i = from; i < to; i++) {
 			result.push({
@@ -48,11 +48,11 @@ export default class TaskStore {
 	}
 
 	getTask(id) {
-		return this._tasks.find(task => task.id == id)
+		return this._tasks.find(task => task.id === parseInt(id))
 	}
 
 	getTaskIndex(id) {
-		return this._tasks.findIndex(task => task.id == id)
+		return this._tasks.findIndex(task => task.id === parseInt(id))
 	}
 
 	deleteTask(id) {

@@ -69,6 +69,6 @@ function TaskView() {
 			</main>
 		</div>
 	);
-};
+}
 
 export default TaskView;

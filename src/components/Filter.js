@@ -11,11 +11,11 @@ function Filter() {
 						</legend>
 						<label className="form__radio" htmlFor="new">
 							<input type="radio" name="sort" id="new"/> Новые
-							<span className="form__radio-checkmark"></span>
+							<span className="form__radio-checkmark"/>
 						</label>
 						<label className="form__radio" htmlFor="old">
 							<input type="radio" name="sort" id="old"/> Старые
-							<span className="form__radio-checkmark"></span>
+							<span className="form__radio-checkmark"/>
 						</label>
 					</fieldset>
 				</form>
@@ -29,15 +29,15 @@ function Filter() {
 						</legend>
 						<label className="form__checkbox" htmlFor="low">
 							<input type="checkbox" name="priority" id="low"/> Low
-							<span className="form__checkbox-checkmark"></span>
+							<span className="form__checkbox-checkmark"/>
 						</label>
 						<label className="form__checkbox" htmlFor="norm">
 							<input type="checkbox" name="priority" id="norm"/> Normal
-							<span className="form__checkbox-checkmark"></span>
+							<span className="form__checkbox-checkmark"/>
 						</label>
 						<label className="form__checkbox" htmlFor="high">
 							<input type="checkbox" name="priority" id="high"/> High
-							<span className="form__checkbox-checkmark"></span>
+							<span className="form__checkbox-checkmark"/>
 						</label>
 					</fieldset>
 				</form>
@@ -49,15 +49,15 @@ function Filter() {
 						</legend>
 						<label className="form__checkbox" htmlFor="research">
 							<input type="checkbox" name="mark" id="research"/> Research
-							<span className="form__checkbox-checkmark"></span>
+							<span className="form__checkbox-checkmark"/>
 						</label>
 						<label className="form__checkbox" htmlFor="design">
 							<input type="checkbox" name="mark" id="design"/> Design
-							<span className="form__checkbox-checkmark"></span>
+							<span className="form__checkbox-checkmark"/>
 						</label>
 						<label className="form__checkbox" htmlFor="dev">
 							<input type="checkbox" name="mark" id="dev"/> Development
-							<span className="form__checkbox-checkmark"></span>
+							<span className="form__checkbox-checkmark"/>
 						</label>
 					</fieldset>
 				</form>

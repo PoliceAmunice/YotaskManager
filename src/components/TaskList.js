@@ -18,12 +18,12 @@ const TaskList = observer(() => {
 	}
 
 	return (
-		<Suspense fallback={<div className="preloader"></div>}>
+		<Suspense fallback={<div className="preloader"/>}>
 			<section className="task-list">
 				{tasks.map(task =>
 					<TaskItem key={task.id} task={task}/>
 				)}
-				{isFetching && <div className="preloader"></div>}
+				{isFetching && <div className="preloader"/>}
 			</section>
 		</Suspense>
 	)
